@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Introduction to Variables in JavaScript
  *
@@ -5,11 +7,11 @@
  * 2. JavaScript has three ways to declare variables: var, let, and const
  * 3. Variable creation has two phases: declaration and assignment
  * 4. Rules to create a variable in javascript
- *   The variable name must contain letterd, digit or the symbol $ and _
- *   The first must not be a digit 1message = "Hello" not allowed
- *   If name contian multiple words we usually follow camelCase or snackcase
- * 5. In Javascript variables are case sensitive.
- * 6. We can not used reserved key word as a varaible name like var, let, const and return etc
+ * 5. The variable name must contain letterd, digit or the symbol $ and _
+ * 6. The first must not be a digit 1message = "Hello" not allowed
+ * 7. If name contian multiple words we usually follow camelCase or snackcase
+ * 8. In Javascript variables are case sensitive.
+ * 8. We can not used reserved key word as a varaible name like var, let, const and return etc
  */
 
 // ==================================================================
@@ -27,8 +29,26 @@ var message;
 // Phase 2: Assignment
 message = "hello";
 
+// Combine Phase 1 and 2
+
+var message = "Hello 1";
+
 // Accessing the variable
 console.log("Message value:", message); // Output: hello
+
+// Multiple ways to declare variables:
+
+// let user = 'John', age = 25, userClass = '1';
+
+// let user = 'John',
+//   age = 25,
+//   userClass = 'Hello';
+
+let user = "John",
+  age = 25,
+  userClass = "Hello";
+
+console.log(user, age, userClass, "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
 
 // ==================================================================
 // Variable Assignment
@@ -45,12 +65,16 @@ console.log("New message:", newMessage); // Still outputs: hello
 
 // Var
 
-var myName = "Masood"; // Flobal scoped
+var myName = "Masood"; // Global scoped
 
 function abc() {
-  var myName = "Huraira"; // Function Scoped
-  console.log("Function my name", myName);
+  var functionScoped = "Huraira"; // Function Scoped
+  // console.log("Function my name", myName);
+
+  console.log(functionScoped, "asdjasdjhasdjhasdjhjh");
 }
+
+abc();
 
 if (true) {
   // The same myName variable Redeclare here ignore block scope treat as a global variable
@@ -59,3 +83,121 @@ if (true) {
 
 console.log("My Name", myName);
 abc();
+
+function getUser() {
+  // code execution phase take it to upper assign undefind
+  if (!userData) {
+    // here its get undefined and condtion true because using ! this  then u get userDate
+    var userData = { name: "masood" }; // Hoisted
+  }
+  return userData; // get data here becasue ignore blocked scope
+}
+
+console.log(getUser(), "GET USER");
+
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+
+console.log(i); // Ignore block scope
+
+var i = 0; // after completing loop value 10
+
+{
+  setTimeout(() => console.log(i), 1000); // run 10 times
+}
+
+for (let j = 0; j < 10; j++) {
+  setTimeout(() => console.log(i), 1000);
+}
+
+{
+  let j = 0;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 1;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 2;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 3;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 4;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 5;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 6;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 7;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 8;
+  setTimeout(() => console.log(j), 1000);
+}
+{
+  let j = 9;
+  setTimeout(() => console.log(j), 1000);
+}
+
+{
+  let vaa = 1;
+}
+{
+  let vaa = 1;
+}
+
+function sayHi() {
+  if (true) {
+    var phrase = "Hello";
+  }
+
+  console.log(phrase); // works
+}
+
+sayHi();
+// console.log(phrase);
+
+for (var i = 0; i < 10; i++) {
+  (function () {
+    setTimeout(() => console.log(i), 1000);
+  });
+}
+
+(function () {
+  var b = 1;
+  console.log(b, "asdasjdasjhdasjh");
+})();
+
+const kkk = "Jsjksdjhasfasjh"
+kkk = "Asdasjdasdjhjh"
+
+
+
+
+
+{
+  let sdsad = "asdsad"
+  sdsad="ASdaskldask"
+}
+{
+  const sdsad = "asdsad"
+}
+
+
+
+
+
+
